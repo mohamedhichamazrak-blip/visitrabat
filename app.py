@@ -7,47 +7,55 @@ st.set_page_config(page_title="Rabat Insider Pro", page_icon="🇲🇦", layout=
 
 st.markdown("""
     <style>
+  st.markdown("""
+    <style>
     /* Importation d'une police élégante */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
 
-    /* Background global */
+    /* Arrière-plan avec image de Rabat */
     .stApp {
-        background-color: #F8F9FA;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url("https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1920&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
     }
 
-    /* Style des titres */
+    /* Ajustement des couleurs pour la lisibilité sur fond sombre */
     h1 {
         font-family: 'Playfair Display', serif;
-        color: #1A1A1A;
+        color: #FFFFFF !important;
         text-align: center;
-        padding-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
     
-    /* Cartes de lieux */
+    p, label, .stSelectbox label {
+        color: #FFFFFF !important;
+    }
+
+    /* Cartes de lieux : on les rend légèrement translucides pour le look "Glassmorphism" */
     .place-card {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.95);
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
         margin-bottom: 20px;
-        border-left: 5px solid #C5A059; /* Couleur Or/Sable Rabat */
+        border-left: 5px solid #C5A059;
     }
     
     .place-name {
         font-size: 1.2em;
         font-weight: 600;
         color: #1A1A1A;
-        margin-bottom: 5px;
     }
     
     .place-address {
         font-size: 0.9em;
-        color: #666;
+        color: #444;
         font-style: italic;
-        margin-bottom: 10px;
     }
 
-    /* Masquer le menu Streamlit pour faire plus "App" */
+    /* Masquer les éléments inutiles de Streamlit */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
